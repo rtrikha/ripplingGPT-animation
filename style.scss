@@ -13,7 +13,7 @@ body {
 .orb {
 	width: 100px;
 	height: 100px;
-	background-color: transparent; /* Make the orb background transparent */
+	background-color: transparent;
 	position: relative;
 	border-radius: 50%;
 	overflow: hidden;
@@ -23,13 +23,13 @@ body {
 .orb-outline {
 	width: 100px;
 	height: 100px;
-	border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border */
+	border: 2px solid rgba(255, 255, 255, 0.3);
 	border-radius: 50%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	pointer-events: none; /* Make sure it doesn't interfere with any interactions */
-	box-sizing: border-box; /* Ensure the border is included in the element's dimensions */
+	pointer-events: none;
+	box-sizing: border-box;
 }
 
 .openAI {
@@ -70,7 +70,7 @@ body {
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 0; /* Place the blurs beneath the orb border */
+	z-index: 0;
 }
 
 .blur-1,
@@ -86,7 +86,7 @@ body {
 	height: 60px;
 	filter: blur(28px);
 	animation: orb-loading-1 12000ms ease-in-out infinite;
-	opacity: 0.5; /* Increase initial opacity */
+	opacity: 0.5;
 }
 
 .blur-2 {
@@ -95,7 +95,7 @@ body {
 	height: 48px;
 	filter: blur(16px);
 	animation: orb-loading-2 15000ms ease-in-out infinite;
-	opacity: 0.8; /* Increase initial opacity */
+	opacity: 0.8;
 }
 
 .blur-3 {
@@ -104,7 +104,7 @@ body {
 	height: 80px;
 	filter: blur(16px);
 	animation: orb-loading-3 18000ms ease-in-out infinite;
-	opacity: 0.8; /* Increase initial opacity */
+	opacity: 0.8;
 }
 
 @keyframes orb-loading-1 {
