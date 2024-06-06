@@ -8,101 +8,103 @@ body {
 	height: 100px;
 	margin: 0 auto;
 	margin-top: 44vh;
+}
 
-	.orb {
-		width: 100px;
-		height: 100px;
-		background-color: transparent;
-		position: relative;
-		border-radius: 50%;
-		overflow: hidden;
-		background: #131314;
+.orb {
+	width: 100px;
+	height: 100px;
+	background-color: transparent; /* Make the orb background transparent */
+	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
+	background: #131314;
+}
 
-		.openAI {
-			width: 40px;
-			height: 40px;
-			margin: 0 auto;
-			z-index: 100;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+.orb-outline {
+	width: 100px;
+	height: 100px;
+	border: 2px solid rgba(255, 255, 255, 0.3); /* Transparent border */
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none; /* Make sure it doesn't interfere with any interactions */
+	box-sizing: border-box; /* Ensure the border is included in the element's dimensions */
+}
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
-			}
-		}
-	}
-	.orb-outline {
-		width: 100px;
-		height: 100px;
-		border: 2px solid rgba(255, 255, 255, 0.2);
-		border-radius: 50%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		pointer-events: none;
-		box-sizing: border-box;
-	}
+.openAI {
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	z-index: 100;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
-	.blurs {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: 0;
+.openAI img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
 
-		.blur-1,
-		.blur-2,
-		.blur-3 {
-			position: absolute;
-			border-radius: 50%;
-		}
+.shimmer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
 
-		.blur-1 {
-			background-color: #fdb71c;
-			width: 60px;
-			height: 60px;
-			filter: blur(28px);
-			animation: orb-loading-1 20000ms ease-in-out infinite;
-			opacity: 0.5;
-		}
+.shimmer img {
+	width: 100%;
+	height: 100%;
+	margin-left: 8px;
+}
 
-		.blur-2 {
-			background-color: #a97088;
-			width: 48px;
-			height: 48px;
-			filter: blur(16px);
-			animation: orb-loading-2 25000ms ease-in-out infinite;
-			opacity: 0.8;
-		}
+.blurs {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0; /* Place the blurs beneath the orb border */
+}
 
-		.blur-3 {
-			background-color: #512f3e;
-			width: 80px;
-			height: 80px;
-			filter: blur(16px);
-			animation: orb-loading-3 30000ms ease-in-out infinite;
-			opacity: 0.8;
-		}
-	}
+.blur-1,
+.blur-2,
+.blur-3 {
+	position: absolute;
+	border-radius: 50%;
+}
 
-	.shimmer {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: 50;
-		img {
-			width: 100%;
-			height: 100%;
-			margin-left: 8px;
-		}
-	}
+.blur-1 {
+	background-color: #fdb71c;
+	width: 60px;
+	height: 60px;
+	filter: blur(28px);
+	animation: orb-loading-1 12000ms ease-in-out infinite;
+	opacity: 0.5; /* Increase initial opacity */
+}
+
+.blur-2 {
+	background-color: #a97088;
+	width: 48px;
+	height: 48px;
+	filter: blur(16px);
+	animation: orb-loading-2 15000ms ease-in-out infinite;
+	opacity: 0.8; /* Increase initial opacity */
+}
+
+.blur-3 {
+	background-color: #512f3e;
+	width: 80px;
+	height: 80px;
+	filter: blur(16px);
+	animation: orb-loading-3 18000ms ease-in-out infinite;
+	opacity: 0.8; /* Increase initial opacity */
 }
 
 @keyframes orb-loading-1 {
@@ -200,6 +202,6 @@ body {
 		top: 20%;
 		left: 60%;
 		opacity: 0.8;
-		filter: blur(18px);
+		filter: blur(16px);
 	}
 }
